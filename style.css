@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-color: rgb(145, 136, 125);
+    background-color: rgb(215, 229, 234);
 }
 
 .calculator {
@@ -48,6 +48,6 @@ button {
     background-color: #454545;
     border: 2px outset #555555;
     border-radius: 20px;
-    color: whitesmoke;
+    color: #eae2d8;
     font-family: 'Varela Round', sans-serif;
 }
