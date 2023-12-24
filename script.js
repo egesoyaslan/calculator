@@ -37,25 +37,26 @@ const display = document.querySelector(`.display`);
 const buttons = document.querySelector(`.buttons`);
 buttons.addEventListener(`click`, (e) => {
     const target = (e.target).textContent;
+    if ((e.target).tagName === `BUTTON`) {
+        if (target === `=`) { 
+            let array = [];
+            array = displayValue.split(` `);
 
-    if (target === `=`) { 
-        let array = [];
-        array = displayValue.split(` `);
-
-        assign(array);
-        while (array.length > 1) {
-            array[0] = operate(num1, operator, num2);
-            array.splice(1, 2);
             assign(array);
+            while (array.length > 1) {
+                array[0] = operate(num1, operator, num2);
+                array.splice(1, 2);
+                assign(array);
+            }
+            displayValue = num1;
         }
-        displayValue = num1;
+
+        else if (target === `AC`) {
+            displayValue = ``;
+        }
+
+        else displayValue += target;
+
+        display.textContent = displayValue;
     }
-
-    else if (target === `AC`) {
-        displayValue = ``;
-    }
-
-    else displayValue += target;
-
-    display.textContent = displayValue;
 });
