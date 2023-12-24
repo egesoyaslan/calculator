@@ -22,6 +22,7 @@ function operate(a, b, c) {
     if (b === `+`) return add(a, c);
     if (b === `-`) return subtract(a, c);
     if (b === `x`) return multiply(a,c);
+    if (b === `÷` && +c === 0) return "ERROR!";
     if (b === `÷`) return divide(a, c);
 }
 
@@ -29,6 +30,14 @@ function assign(givenArray) {
     num1 = givenArray[0];
     operator = givenArray[1];
     num2 = givenArray[2];
+}
+
+function roundToTwoDecimals(value) {
+    if (value === "ERROR!") {
+        return value;
+    } else {
+        return parseFloat(value.toFixed(2));
+    }
 }
 
 let displayValue = ``;
@@ -48,7 +57,8 @@ buttons.addEventListener(`click`, (e) => {
                 array.splice(1, 2);
                 assign(array);
             }
-            displayValue = num1;
+
+            displayValue = roundToTwoDecimals(num1);
         }
 
         else if (target === `AC`) {

@@ -8,14 +8,14 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-color: rgb(129, 129, 129);
+    background-color: rgb(145, 136, 125);
 }
 
 .calculator {
     background-color: #363636;
     padding: 30px;
     width: 350px;
-    border: 5px solid #000000;
+    border: 5px outset #000000;
     border-radius: 20px;
 }
 
@@ -42,11 +42,11 @@ body {
 }
 
 button {
-    font-size: 35px;
+    font-size: 30px;
     width: 80px;
     height: 80px;
     background-color: #454545;
-    border: 2px solid #555555;
+    border: 2px outset #555555;
     border-radius: 20px;
     color: whitesmoke;
     font-family: 'Varela Round', sans-serif;
